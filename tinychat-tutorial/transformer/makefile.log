@@ -1,0 +1,95 @@
+mkdir -p build/transformer/src/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/Generate.cc -o build/transformer/src/Generate.o
+mkdir -p build/transformer/src/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/LLaMAGenerate.cc -o build/transformer/src/LLaMAGenerate.o
+mkdir -p build/transformer/src/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/LLaMATokenizer.cc -o build/transformer/src/LLaMATokenizer.o
+mkdir -p build/transformer/src/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/OPTGenerate.cc -o build/transformer/src/OPTGenerate.o
+mkdir -p build/transformer/src/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/OPTTokenizer.cc -o build/transformer/src/OPTTokenizer.o
+mkdir -p build/transformer/src/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/utils.cc -o build/transformer/src/utils.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Fp32llamaAttention.cc -o build/transformer/src/nn_modules/Fp32llamaAttention.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Fp32llamaDecoder.cc -o build/transformer/src/nn_modules/Fp32llamaDecoder.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Fp32llamaDecoderLayer.cc -o build/transformer/src/nn_modules/Fp32llamaDecoderLayer.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Fp32llamaForCausalLM.cc -o build/transformer/src/nn_modules/Fp32llamaForCausalLM.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Int4llamaAttention.cc -o build/transformer/src/nn_modules/Int4llamaAttention.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Int4llamaDecoder.cc -o build/transformer/src/nn_modules/Int4llamaDecoder.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Int4llamaDecoderLayer.cc -o build/transformer/src/nn_modules/Int4llamaDecoderLayer.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Int4llamaForCausalLM.cc -o build/transformer/src/nn_modules/Int4llamaForCausalLM.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Int8OPTAttention.cc -o build/transformer/src/nn_modules/Int8OPTAttention.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Int8OPTDecoder.cc -o build/transformer/src/nn_modules/Int8OPTDecoder.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/Int8OPTDecoderLayer.cc -o build/transformer/src/nn_modules/Int8OPTDecoderLayer.o
+mkdir -p build/transformer/src/nn_modules/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/nn_modules/OPTForCausalLM.cc -o build/transformer/src/nn_modules/OPTForCausalLM.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/arg_max.cc -o build/transformer/src/ops/arg_max.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/batch_add.cc -o build/transformer/src/ops/batch_add.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/BMM_F32T.cc -o build/transformer/src/ops/BMM_F32T.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/BMM_S8T_S8N_F32T.cc -o build/transformer/src/ops/BMM_S8T_S8N_F32T.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/BMM_S8T_S8N_S8T.cc -o build/transformer/src/ops/BMM_S8T_S8N_S8T.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/embedding.cc -o build/transformer/src/ops/embedding.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/LayerNorm.cc -o build/transformer/src/ops/LayerNorm.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/LayerNormQ.cc -o build/transformer/src/ops/LayerNormQ.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/linear.cc -o build/transformer/src/ops/linear.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/LlamaRMSNorm.cc -o build/transformer/src/ops/LlamaRMSNorm.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/RotaryPosEmb.cc -o build/transformer/src/ops/RotaryPosEmb.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/softmax.cc -o build/transformer/src/ops/softmax.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/W8A8B8O8Linear.cc -o build/transformer/src/ops/W8A8B8O8Linear.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/W8A8B8O8LinearReLU.cc -o build/transformer/src/ops/W8A8B8O8LinearReLU.o
+mkdir -p build/transformer/src/ops/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c src/ops/W8A8BFP32OFP32Linear.cc -o build/transformer/src/ops/W8A8BFP32OFP32Linear.o
+mkdir -p build/transformer/../kernels/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/matmul_imp.cc -o build/transformer/../kernels/matmul_imp.o
+mkdir -p build/transformer/../kernels/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/matmul_int4.cc -o build/transformer/../kernels/matmul_int4.o
+mkdir -p build/transformer/../kernels/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/matmul_int8.cc -o build/transformer/../kernels/matmul_int8.o
+mkdir -p build/transformer/../kernels/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/quantizer.cc -o build/transformer/../kernels/quantizer.o
+mkdir -p build/transformer/../kernels/avx/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/avx/matmul_avx_fp32.cc -o build/transformer/../kernels/avx/matmul_avx_fp32.o
+mkdir -p build/transformer/../kernels/avx/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/avx/matmul_avx_int4.cc -o build/transformer/../kernels/avx/matmul_avx_int4.o
+mkdir -p build/transformer/../kernels/avx/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/avx/matmul_avx_int8.cc -o build/transformer/../kernels/avx/matmul_avx_int8.o
+mkdir -p build/transformer/../kernels/avx/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/avx/matmul_avx_int8_int4.cc -o build/transformer/../kernels/avx/matmul_avx_int8_int4.o
+mkdir -p build/transformer/../kernels/starter_code/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/starter_code/all_techniques.cc -o build/transformer/../kernels/starter_code/all_techniques.o
+mkdir -p build/transformer/../kernels/starter_code/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/starter_code/loop_unrolling.cc -o build/transformer/../kernels/starter_code/loop_unrolling.o
+mkdir -p build/transformer/../kernels/starter_code/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/starter_code/multithreading.cc -o build/transformer/../kernels/starter_code/multithreading.o
+mkdir -p build/transformer/../kernels/starter_code/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/starter_code/multithreading_loop_unrolling.cc -o build/transformer/../kernels/starter_code/multithreading_loop_unrolling.o
+mkdir -p build/transformer/../kernels/starter_code/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/starter_code/reference.cc -o build/transformer/../kernels/starter_code/reference.o
+mkdir -p build/transformer/../kernels/starter_code/
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -c ../kernels/starter_code/simd_programming.cc -o build/transformer/../kernels/starter_code/simd_programming.o
+g++ -std=c++11 -pthread -g -O0 -w -DIMP=0 1 2 3 4 5 -mavx2 -mfma -ffast-math -fpermissive -DQM_x86 -I../kernels -I./include -I./include/nn_modules -I./json/single_include/ -o chat application/chat.cc build/transformer/src/Generate.o build/transformer/src/LLaMAGenerate.o build/transformer/src/LLaMATokenizer.o build/transformer/src/OPTGenerate.o build/transformer/src/OPTTokenizer.o build/transformer/src/utils.o build/transformer/src/nn_modules/Fp32llamaAttention.o build/transformer/src/nn_modules/Fp32llamaDecoder.o build/transformer/src/nn_modules/Fp32llamaDecoderLayer.o build/transformer/src/nn_modules/Fp32llamaForCausalLM.o build/transformer/src/nn_modules/Int4llamaAttention.o build/transformer/src/nn_modules/Int4llamaDecoder.o build/transformer/src/nn_modules/Int4llamaDecoderLayer.o build/transformer/src/nn_modules/Int4llamaForCausalLM.o build/transformer/src/nn_modules/Int8OPTAttention.o build/transformer/src/nn_modules/Int8OPTDecoder.o build/transformer/src/nn_modules/Int8OPTDecoderLayer.o build/transformer/src/nn_modules/OPTForCausalLM.o build/transformer/src/ops/arg_max.o build/transformer/src/ops/batch_add.o build/transformer/src/ops/BMM_F32T.o build/transformer/src/ops/BMM_S8T_S8N_F32T.o build/transformer/src/ops/BMM_S8T_S8N_S8T.o build/transformer/src/ops/embedding.o build/transformer/src/ops/LayerNorm.o build/transformer/src/ops/LayerNormQ.o build/transformer/src/ops/linear.o build/transformer/src/ops/LlamaRMSNorm.o build/transformer/src/ops/RotaryPosEmb.o build/transformer/src/ops/softmax.o build/transformer/src/ops/W8A8B8O8Linear.o build/transformer/src/ops/W8A8B8O8LinearReLU.o build/transformer/src/ops/W8A8BFP32OFP32Linear.o build/transformer/../kernels/matmul_imp.o build/transformer/../kernels/matmul_int4.o build/transformer/../kernels/matmul_int8.o build/transformer/../kernels/quantizer.o build/transformer/../kernels/avx/matmul_avx_fp32.o build/transformer/../kernels/avx/matmul_avx_int4.o build/transformer/../kernels/avx/matmul_avx_int8.o build/transformer/../kernels/avx/matmul_avx_int8_int4.o build/transformer/../kernels/starter_code/all_techniques.o build/transformer/../kernels/starter_code/loop_unrolling.o build/transformer/../kernels/starter_code/multithreading.o build/transformer/../kernels/starter_code/multithreading_loop_unrolling.o build/transformer/../kernels/starter_code/reference.o build/transformer/../kernels/starter_code/simd_programming.o  
