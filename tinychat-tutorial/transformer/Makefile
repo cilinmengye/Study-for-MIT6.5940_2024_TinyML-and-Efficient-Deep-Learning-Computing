@@ -4,7 +4,7 @@ CXXFLAGS = -std=c++11 -pthread -g -O0 -w
 CXXFLAGS += -DIMP=$(IMP)
 
 # Executable and source files
-TEST_TARGET = test_linear
+TEST_TARGET = test_linear test_MockModel
 PROFILE_TARGET =
 APP_TARGET = chat
 TARGET = $(TEST_TARGET) $(PROFILE_TARGET) $(APP_TARGET)
